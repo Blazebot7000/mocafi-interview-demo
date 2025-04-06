@@ -50,7 +50,9 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewInit {
     this.subscriptions.push(
       this.store.select(selectAllUsers).subscribe(users => {
         this.dataSource.data = users;
-        this.isLoading = false;
+        if (users.length > 0) {
+          this.isLoading = false;
+        }
       })
     );
   }
