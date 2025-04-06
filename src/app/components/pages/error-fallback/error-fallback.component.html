@@ -1,0 +1,19 @@
+<div class="mx-auto w-full h-full flex items-center justify-center bg-gray-100">
+  <mat-card class="max-w-md w-full p-6 text-center" appearance="outlined">
+    <div class="flex flex-col items-center gap-4">
+      
+      <h1 class="text-2xl font-bold text-red-500">Oops! Something went wrong</h1>
+      
+      <p class="text-gray-600">
+        We encountered an unexpected error. Please try again or contact support if the problem persists.
+      </p>
+      
+      <div class="mt-4">
+        <button mat-flat-button color="primary" (click)="goToLogin()">
+          <mat-icon class="mr-2">login</mat-icon>
+          Return to Login
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

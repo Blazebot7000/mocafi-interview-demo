@@ -1,0 +1,40 @@
+<div class="container mx-auto p-4">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+    <mat-form-field class="w-full">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter name">
+      <mat-error *ngIf="userForm.get('name')?.invalid">
+        {{ getErrorMessage('name') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter email" type="email">
+      <mat-error *ngIf="userForm.get('email')?.invalid">
+        {{ getErrorMessage('email') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender" placeholder="Select gender">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+      </mat-select>
+      <mat-error *ngIf="userForm.get('gender')?.invalid">
+        {{ getErrorMessage('gender') }}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="flex items-center">
+      <mat-checkbox formControlName="status" color="primary">
+        Active
+      </mat-checkbox>
+    </div>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">
+      {{ user ? 'Update' : 'Create' }} User
+    </button>
+  </form>
+</div> 

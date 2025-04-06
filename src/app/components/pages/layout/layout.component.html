@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="flex items-center px-4 h-16 shadow-md">
+  <div class="flex items-center mr-6">
+    <!-- Placeholder for branding icon -->
+    <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+      <mat-icon>account_circle</mat-icon>
+    </div>
+  </div>
+
+  <div class="flex gap-2">
+    <a mat-button routerLink="/users" routerLinkActive="bg-white/10">All Users</a>
+    <a mat-button routerLink="/register" routerLinkActive="bg-white/10">Create User</a>
+  </div>
+
+  <div class="flex-1"></div>
+
+  <div class="flex items-center gap-4">
+    <span class="text-sm whitespace-nowrap text-gray-800">{{ userEmail }}</span>
+    <button mat-flat-button color="accent" (click)="logout()" class="flex items-center">
+      <mat-icon>exit_to_app</mat-icon>
+      Sign out
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="p-6 max-w-7xl mx-auto">
+  <router-outlet></router-outlet>
+</div>
+

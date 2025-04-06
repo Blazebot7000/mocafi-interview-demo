@@ -1,0 +1,54 @@
+<div class="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+  <mat-card class="w-full max-w-md p-6" appearance="outlined">
+    <mat-card-header class="justify-center mb-6">
+      <mat-card-title class="text-2xl font-medium text-gray-800">Sign in</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+        <mat-form-field class="w-full">
+          <mat-label for="email">Email</mat-label>
+          <input
+            matInput
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Enter your email"
+            required
+          />
+          @if (formSubmitted && emailError) {
+            <mat-error>{{ emailError }}</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="w-full">
+          <mat-label for="password">Password</mat-label>
+          <input
+            matInput
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Enter your password"
+            required
+          />
+          @if (formSubmitted && passwordError) {
+            <mat-error>{{ passwordError }}</mat-error>
+          }
+        </mat-form-field>
+
+        @if (formSubmitted && invalidCredentials) {
+          <mat-error>{{ invalidCredentials }}</mat-error>
+        }
+        <button mat-flat-button color="primary" type="submit" class="mt-2">
+          Sign in
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="flex justify-center items-center mt-8 text-sm text-gray-500 bg-gray-100">
+    This is a demo with hardcoded login credentials. Please log in with email:&nbsp;<strong>demo&#64;mocafi.com</strong>&nbsp;and password:&nbsp;<strong>MoCaFiRock$</strong>
+  </div>
+</div>
