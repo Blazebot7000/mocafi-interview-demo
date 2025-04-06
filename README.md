@@ -2,19 +2,19 @@
 
 This project was created by Collin Graf as a part of an interview for the company MoCaFi. 
 
-This application is being hosted on Vercel, accessible here: (Will add link once deployment is tested)
+This application is being hosted on Vercel, accessible here: https://mocafi-interview-demo.vercel.app/
 
 ## Code Showcase
 
 This codebase is written using Angular 19. 
 
-You will notice a lack of .css/.scss/.sass files in this project, as I have used Tailwinds to manage the application styles over the more traditional approach of using stylesheets.
+You will notice a lack of stylesheets in this project's components, as I have opted to use Tailwinds to manage the application's components' styles.
 
-This codebase also utilizes many core Angular concepts and libraries, such as ngrx state management, Angular Material components, Angular Routing, and both Angular Template-driven forms and Angular Reactive Forms. 
+This codebase also utilizes many core Angular concepts and libraries, such as ngrx state management, Angular Material components, Angular routing, and both Angular template-driven forms and Angular reactive forms. 
 
 ## Project Structure
 
-This project is broken down into 2 main folders. First is the components folder which houses all of my application's components. This folder is broken down further between components that act as a page and components that are shared for use across multiple pages. Second is the store folder which houses the application's state, handles all logic related to API interactions, and holds any custom types or interfaces.
+This project is broken down into 2 main folders. First is the components folder which houses all the application's components. This folder is broken down further between components that act as a page and components that are shared or reusable. Second is the store folder which houses the application's state, handles all logic related to API interactions, and holds any custom types or interfaces.
 
 ## Misc
 
@@ -22,4 +22,4 @@ Rolling auth was outside of the scope of this project. While the application doe
 
 The https://gorest.co.in/ API requires an API key in order to create or edit users. This API key is currently hardcoded for ease-of-use by the reviewer of this code. 
 
-I have not added unit tests or regression tests to this project to give myself more time to focus on showcasing other expertise. I can add those if desired at a later time.
+Unit tests and regression tests I believed were outside the scope of this project, but can be added if desired.
